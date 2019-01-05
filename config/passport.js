@@ -7,11 +7,8 @@ const User = require('../models/usersModels');
 module.exports = function(passport) {
   passport.use(
     new LocalStrategy((username, password, done) => {
-      console.log(username)
-
       // Match user
       User.findOne(['username',username],user => {
-        console.log(user)
         if (user.length === 0) {
           return done(null, false, { message: 'That email is not registered' });
         }
@@ -30,7 +27,7 @@ module.exports = function(passport) {
   );
 
   passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    done(null, user);
   });
 
   passport.deserializeUser(function(id, done) {

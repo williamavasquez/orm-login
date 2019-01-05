@@ -6,6 +6,7 @@ const passport = require("passport")
 const User = require("../models/usersModels")
 
 router.get('/login', (req, res)=>{
+  console.log(req.session.passport)
   res.render("loginForm")
 })
 
