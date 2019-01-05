@@ -1,0 +1,25 @@
+
+<h2>Account Creation Form</h2>
+
+<form method="post" action="/auth/turtles">
+  <div class="imgcontainer">
+    <img src="/assets/img_avatar.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+     <label for="name"><b>name</b></label>
+    <input type="text" placeholder="Enter Username" name="name" required>
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button id="register-btn">Create Account</button>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+     <span class="psw"><a href="/auth/login">Already have a Account?</a></span>
+  </div>
+</form>
