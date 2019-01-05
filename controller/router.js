@@ -9,6 +9,8 @@ router.get("/", (req,res)=>{
 })
 
 router.get("/dashboard", ensureAuthenticated, (req,res)=>{
+
+  console.log(req.session)
   console.log("I MADE IT TO DASHBOARD")
   res.render("userExist")
 })

@@ -30,14 +30,12 @@ module.exports = function(passport) {
   );
 
   passport.serializeUser(function(user, done) {
-    console.log("serializeUser")
-    console.log(user)
     done(null, user.id);
   });
 
   passport.deserializeUser(function(id, done) {
-    User.findOne(['id',id], function(err, user) {
-      done(err, user);
+    User.findOne(['id',id], function(user) {
+      done(null, user);
     });
   });
 };
